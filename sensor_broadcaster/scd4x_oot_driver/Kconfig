@@ -1,0 +1,5 @@
+menu "SCD4x Driver module"
+
+rsource "drivers/Kconfig"
+
+endmenu

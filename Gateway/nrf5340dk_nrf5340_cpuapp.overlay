@@ -1,0 +1,20 @@
+// Console Uart
+&uart0 {
+	status = "okay";
+	current-speed = <115200>;
+	tx-pin = <25>;
+	rx-pin = <26>;
+	rts-pin = <27>;
+	cts-pin = <24>;
+};
+
+// Uart communication between NINA-W156 and NORA-B1
+&uart2 {
+	status = "okay";
+	current-speed = <115200>;
+	tx-pin = <31>;  
+	rx-pin = <43>;
+	cts-pin = <30>;  
+	rts-pin = <20>;  
+	hw-flow-control;
+};

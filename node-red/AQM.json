@@ -1,0 +1,346 @@
+[
+    {
+        "id": "18a815c2b45f3cbd",
+        "type": "tab",
+        "label": "Air Quality Dashboard",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "e6df57bb35cf7a42",
+        "type": "ui_template",
+        "z": "18a815c2b45f3cbd",
+        "group": "",
+        "name": "customise background",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "<style> \n\n#nr-dashboard-toolbar {\n background-color: #ff6e59;\n}\n\n\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": false,
+        "templateScope": "local",
+        "className": "",
+        "x": 400,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7f5bf51bec4c2956",
+        "type": "ui_chart",
+        "z": "18a815c2b45f3cbd",
+        "name": "C02",
+        "group": "39d9a3769275fe29",
+        "order": 1,
+        "width": "0",
+        "height": "0",
+        "label": "CO2 Level (PPM)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dea174e853e53541",
+        "type": "ui_chart",
+        "z": "18a815c2b45f3cbd",
+        "name": "Humidity",
+        "group": "39d9a3769275fe29",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity (%)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 580,
+        "y": 176,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8d5eb6873d405bef",
+        "type": "ui_chart",
+        "z": "18a815c2b45f3cbd",
+        "name": "Temp",
+        "group": "39d9a3769275fe29",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature (C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Awaiting sensor publish",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "5",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#ff9896",
+            "#ff9896",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 570,
+        "y": 212,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c8215ed351d17b05",
+        "type": "json",
+        "z": "18a815c2b45f3cbd",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "80b06e55fda88c18",
+                "40183cb052e7ccf4",
+                "1b8ae53a5feb1c15"
+            ]
+        ]
+    },
+    {
+        "id": "e00913ba842ff57e",
+        "type": "mqtt in",
+        "z": "18a815c2b45f3cbd",
+        "name": "Air Quality MQTT In",
+        "topic": "airqualitydashboard",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "bd24ef7fcfe116aa",
+        "nl": false,
+        "rap": false,
+        "inputs": 0,
+        "x": 110,
+        "y": 40,
+        "wires": [
+            [
+                "c8215ed351d17b05"
+            ]
+        ]
+    },
+    {
+        "id": "ba3e5aa11fc03abc",
+        "type": "ui_template",
+        "z": "18a815c2b45f3cbd",
+        "group": "",
+        "name": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": " <iframe src=\"/XPLR-IOT-1\" height=350 width=400></iframe>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 680,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "80b06e55fda88c18",
+        "type": "template",
+        "z": "18a815c2b45f3cbd",
+        "name": "Temperature",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.temperature}}",
+        "output": "str",
+        "x": 370,
+        "y": 220,
+        "wires": [
+            [
+                "8d5eb6873d405bef"
+            ]
+        ]
+    },
+    {
+        "id": "40183cb052e7ccf4",
+        "type": "template",
+        "z": "18a815c2b45f3cbd",
+        "name": "Humidity",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.humidity}}",
+        "output": "str",
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "dea174e853e53541"
+            ]
+        ]
+    },
+    {
+        "id": "1b8ae53a5feb1c15",
+        "type": "template",
+        "z": "18a815c2b45f3cbd",
+        "name": "c02",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "{{payload.c02level}}",
+        "output": "str",
+        "x": 350,
+        "y": 140,
+        "wires": [
+            [
+                "7f5bf51bec4c2956"
+            ]
+        ]
+    },
+    {
+        "id": "e59e9a16d0b276b7",
+        "type": "ui_spacer",
+        "z": "18a815c2b45f3cbd",
+        "name": "spacer",
+        "group": "77d866a.d09ee98",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "39d9a3769275fe29",
+        "type": "ui_group",
+        "z": "18a815c2b45f3cbd",
+        "name": "Environment",
+        "tab": "5269cf984db78bc0",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "bd24ef7fcfe116aa",
+        "type": "mqtt-broker",
+        "z": "18a815c2b45f3cbd",
+        "name": "AirQuality",
+        "broker": "mqtt.thingstream.io",
+        "port": "1883",
+        "clientid": "CopyDashboardThingDeviceIDHere",
+        "autoConnect": true,
+        "usetls": false,
+        "compatmode": false,
+        "protocolVersion": "4",
+        "keepalive": "43200",
+        "cleansession": false,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "77d866a.d09ee98",
+        "type": "ui_group",
+        "z": "6979a4e1.44ba94",
+        "name": "Environment",
+        "tab": "",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": true
+    },
+    {
+        "id": "5269cf984db78bc0",
+        "type": "ui_tab",
+        "z": "18a815c2b45f3cbd",
+        "name": "Air Quality Sensor Demo",
+        "icon": "fa-microchip",
+        "order": 7,
+        "disabled": false,
+        "hidden": false
+    }
+]
