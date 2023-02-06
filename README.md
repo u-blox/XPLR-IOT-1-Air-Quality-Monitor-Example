@@ -23,6 +23,10 @@ All these elements are implemented in this project, to provide a complete exampl
 - The Thingstream flow is described [here](./thingstream_flow)
 - The Node-RED dashboard can be found [here](./node-red) 
 
+### Style
+Coding style is according to https://github.com/u-blox/ubxlib. Make sure you have [Astyle](https://astyle.sourceforge.net/install.html) in the path.<br/>
+To format all code run from root folder `./bin/format_code.sh`.<br/>
+To check if the code is correctly formatted you can also run `./bin/format_code.sh --dry-run` to see if there are any issues.
 
 ## Disclaimer
 Copyright &copy; u-blox 
